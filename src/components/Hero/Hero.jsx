@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './Hero.scss'
 
-const Home = () => {
-   const [currentIndex, setCurrentIndex] = useState(0);
 
-   const goToNext = () => {
-     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-   };
+const Hero = ({images}) => {
+     const [currentIndex, setCurrentIndex] = useState(0);
 
-   const goToPrevious = () => {
-     setCurrentIndex(
-       (prevIndex) => (prevIndex - 1 + images.length) % images.length
-     );
-   };
+     const goToNext = () => {
+       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+     };
+
+     const goToPrevious = () => {
+       setCurrentIndex(
+         (prevIndex) => (prevIndex - 1 + images.length) % images.length
+       );
+     };
   return (
     <div>
       <div className="carousel">
@@ -38,4 +40,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Hero
